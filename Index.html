@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Panchayat Election Employee Form</title>
+
+<style>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f2f4f8;
+    margin:0;
+    padding:20px;
+}
+.container{
+    max-width:1600px;
+    margin:auto;
+    background:#ffffff;
+    padding:25px;
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+h2{
+    text-align:center;
+    background:#1f4e79;
+    color:white;
+    padding:10px;
+    border-radius:5px;
+}
+.section{
+    margin-top:25px;
+    padding:15px;
+    background:#f9fbfd;
+    border-left:6px solid #2e86c1;
+    border-radius:6px;
+}
+.form-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:15px;
+}
+label{
+    font-size:13px;
+    font-weight:bold;
+}
+input, select{
+    width:100%;
+    padding:6px;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+button{
+    margin-top:25px;
+    padding:12px 30px;
+    background:#28a745;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+button:hover{
+    background:#218838;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h2>Panchayat Election Employee Data Entry Form</h2>
+
+<form action="" method="post" name ="Election-Information">
+
+<!-- ================= BASIC DETAILS ================= -->
+<div class="section">
+<h3>मूल जानकारी</h3>
+<div class="form-grid">
+
+<div><label>कार्मिक कोड</label><input type="text" name="emp_code"></div>
+<div><label>नाम (English)</label><input type="text" name="name_english"></div>
+<div><label>नाम (Hindi)</label><input type="text" name="name_hindi"></div>
+
+<div><label>विभागीय पद</label><input type="text" name="designation"></div>
+<div><label>पे मैट्रिक्स</label><input type="text" name="pay_matrix"></div>
+<div><label>ग्रेड पे / लेवल</label><input type="text" name="grade_pay"></div>
+<div><label>मूल वेतन</label><input type="number" name="basic_salary"></div>
+
+<div>
+<label>लिंग</label>
+<select name="gender">
+<option value="">Select</option>
+<option value="M">पुरुष</option>
+<option value="F">स्त्री</option>
+</select>
+</div>
+
+<div><label>वर्तमान पदस्थापन स्थल</label><input type="text" name="current_posting"></div>
+
+<div>
+<label>सेवा प्रकार</label>
+<select name="service_type">
+<option value="">Select</option>
+<option>राज्य</option>
+<option>केन्द्र</option>
+<option>अर्धसरकारी</option>
+</select>
+</div>
+
+<div>
+<label>राजपत्रित / अराजपत्रित</label>
+<select name="gazetted">
+<option value="">Select</option>
+<option>राजपत्रित</option>
+<option>अराजपत्रित</option>
+</select>
+</div>
+
+</div>
+</div>
+
+<!-- ================= RESIDENCE & BLO ================= -->
+<div class="section">
+<h3>निवास एवं BLO जानकारी</h3>
+<div class="form-grid">
+
+<div><label>वर्तमान निवास</label><input type="text" name="current_residence"></div>
+<div><label>स्थाई निवास</label><input type="text" name="permanent_residence"></div>
+
+<div>
+<label>BLO</label>
+<select name="blo">
+<option value="">Select</option>
+<option value="Yes">Yes</option>
+<option value="No">No</option>
+</select>
+</div>
+
+<div>
+<label>होमगार्ड</label>
+<select name="home_guard">
+<option value="">Select</option>
+<option value="Yes">Yes</option>
+<option value="No">No</option>
+</select>
+</div>
+
+<div><label>नियुक्ति तिथि</label><input type="date" name="date_of_joining"></div>
+<div><label>वर्तमान पद नियुक्ति तिथि</label><input type="date" name="current_doj"></div>
+<div><label>सेवानिवृति तिथि</label><input type="date" name="date_of_retirement"></div>
+
+<div><label>मतदाता सूची भाग/क्रम</label><input type="text" name="epic_part_no"></div>
+<div><label>EPIC नंबर</label><input type="text" name="epic_no"></div>
+<div><label>विधानसभा क्षेत्र</label><input type="text" name="constituency"></div>
+
+</div>
+</div>
+
+<!-- ================= CONTACT & BANK ================= -->
+<div class="section">
+<h3>संपर्क एवं बैंक विवरण</h3>
+<div class="form-grid">
+
+<div><label>मोबाइल नंबर</label><input type="text" name="mobile"></div>
+<div><label>ई-मेल</label><input type="email" name="email"></div>
+<div><label>बैंक खाता संख्या</label><input type="text" name="bank_account"></div>
+<div><label>बैंक / शाखा</label><input type="text" name="bank_branch"></div>
+<div><label>IFSC कोड</label><input type="text" name="ifsc"></div>
+
+<div><label>गंभीर बीमारी</label><input type="text" name="serious_illness"></div>
+
+<div>
+<label>विकलांगता</label>
+<select name="disability">
+<option value="">Select</option>
+<option value="Yes">Yes</option>
+<option value="No">No</option>
+</select>
+</div>
+
+<div><label>अन्य विवरण</label><input type="text" name="other_details"></div>
+
+</div>
+</div>
+
+<!-- ================= OFFICE & AREA ================= -->
+<div class="section">
+<h3>निवास एवं कार्यालय विवरण</h3>
+<div class="form-grid">
+
+<div>
+<label>वर्तमान निवास (U/R)</label>
+<select name="residence_category">
+<option value="">Select</option>
+<option value="U">Urban</option>
+<option value="R">Rural</option>
+</select>
+</div>
+
+<div><label>वर्तमान वार्ड संख्या</label><input type="text" name="ward_no"></div>
+<div><label>निगम / पालिका</label><input type="text" name="municipality"></div>
+<div><label>वर्तमान पंचायत समिति</label><input type="text" name="current_panchayat"></div>
+
+<div><label>मूल पंचायत समिति</label><input type="text" name="permanent_panchayat"></div>
+<div><label>कार्यालय पंचायत समिति</label><input type="text" name="office_panchayat"></div>
+
+<div>
+<label>कार्यालय क्षेत्र (U/R)</label>
+<select name="office_category">
+<option value="">Select</option>
+<option value="U">Urban</option>
+<option value="R">Rural</option>
+</select>
+</div>
+
+<div><label>कार्यालय वार्ड संख्या</label><input type="text" name="office_ward_no"></div>
+<div><label>कार्यालय निगम / पालिका</label><input type="text" name="office_municipality"></div>
+
+<div><label>विभाग (English)</label><input type="text" name="department_en"></div>
+<div><label>विभाग (Hindi)</label><input type="text" name="department_hi"></div>
+<div><label>कार्यालय (English)</label><input type="text" name="office_en"></div>
+<div><label>कार्यालय (Hindi)</label><input type="text" name="office_hi"></div>
+<div><label>DDO कोड</label><input type="text" name="ddo_code"></div>
+
+</div>
+</div>
+
+<button type="submit">Submit</button>
+
+</form>
+</div>
+<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxW4y6lj31vJdTsKiftLhpPO8t40Gaha81zA1YBx18DVa6DNC3dA9QNFI-cknBWP6c/exec'
+const form = document.forms['Election-Information']
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("आपका फॉर्म सफलतापूर्वक सबमिट हो गया है।." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => error('Error!', error.message))
+})
+</script>
+</body>
+</html>
