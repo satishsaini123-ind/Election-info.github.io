@@ -254,8 +254,21 @@ button:hover{
 <div><label>कार्यालय वार्ड संख्या</label><input type="text" name="office_ward_no"></div>
 <div><label>कार्यालय निगम / पालिका</label><input type="text" name="office_municipality"></div>
 
-<div><label>विभाग (English)</label><input type="text" name="department_en"></div>
-<div><label>विभाग (Hindi)</label><input type="text" name="department_hi"></div>
+<div><label>विभाग (English)</label>
+<select name="department_en">
+<option value="">Select</option>
+<option value="Medical Education">Medical Education</option>
+<option value="Medical and Health"> Medical and Health</option>
+</select>   
+</div>
+
+<div><label>विभाग (Hindi)</label>
+<select name="department_hi">
+<option value="चिकित्सा शिक्षा विभाग">चिकित्सा शिक्षा विभाग</option>
+<option value="चिकित्सा एवं स्वास्थ्य विभाग">चिकित्सा एवं स्वास्थ्य विभाग</option>
+</select>   
+
+</div>
 <div><label>कार्यालय (English)</label><input type="text" name="office_en"></div>
 <div><label>कार्यालय (Hindi)</label><input type="text" name="office_hi"></div>
 <div><label>DDO कोड</label><input type="text" name="ddo_code"></div>
