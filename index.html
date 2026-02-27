@@ -11,6 +11,7 @@ body{
     margin:0;
     padding:20px;
 }
+
 .container{
     max-width:1600px;
     margin:auto;
@@ -19,6 +20,7 @@ body{
     border-radius:8px;
     box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
+
 h2{
     text-align:center;
     background:#1f4e79;
@@ -26,6 +28,7 @@ h2{
     padding:10px;
     border-radius:5px;
 }
+
 .section{
     margin-top:25px;
     padding:15px;
@@ -33,21 +36,26 @@ h2{
     border-left:6px solid #2e86c1;
     border-radius:6px;
 }
+
 .form-grid{
     display:grid;
     grid-template-columns: repeat(4, 1fr);
     gap:15px;
 }
+
 label{
     font-size:13px;
     font-weight:bold;
 }
+
 input, select{
     width:100%;
     padding:6px;
     border:1px solid #ccc;
     border-radius:4px;
 }
+
+/* BUTTON STYLE */
 button{
     margin-top:25px;
     padding:12px 30px;
@@ -58,8 +66,30 @@ button{
     font-size:16px;
     cursor:pointer;
 }
+
 button:hover{
     background:#218838;
+}
+
+button:disabled{
+    background:#999 !important;
+    cursor:not-allowed;
+}
+
+/* Spinner */
+.spinner{
+    width:16px;
+    height:16px;
+    border:3px solid #fff;
+    border-top:3px solid transparent;
+    border-radius:50%;
+    display:inline-block;
+    animation:spin 1s linear infinite;
+    margin-left:10px;
+}
+
+@keyframes spin{
+    100%{ transform:rotate(360deg); }
 }
 </style>
 </head>
@@ -276,21 +306,67 @@ button:hover{
 
 
 </div>
-
-<button type="submit">Submit</button>
-
+<!-- SUBMIT -->
+<button type="submit" id="submitBtn">
+    <span id="btnText">Submit</span>
+    <span id="loader" style="display:none;">
+        <span class="spinner"></span> Submitting...</span>
+</button>
 </form>
 </div>
 <script>
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxW4y6lj31vJdTsKiftLhpPO8t40Gaha81zA1YBx18DVa6DNC3dA9QNFI-cknBWP6c/exec'
-const form = document.forms['Election-Information']
-form.addEventListener('submit', e => {
-  e.preventDefault()
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-  .then(response => alert("आपका फॉर्म सफलतापूर्वक सबमिट हो गया है।." ))
-  .then(() => { window.location.reload(); })
-  .catch(error => error('Error!', error.message))
+const form = document.forms['Election-Information'];
+const submitBtn = document.getElementById("submitBtn");
+const btnText = document.getElementById("btnText");
+const loader = document.getElementById("loader");
+
+let isSubmitting = false;
+
+form.addEventListener('submit', function(e){
+
+e.preventDefault();
+
+if(isSubmitting) return;
+
+isSubmitting = true;
+
+/* Disable Button */
+submitBtn.disabled = true;
+btnText.style.display="none";
+loader.style.display="inline";
+
+fetch(scriptURL,{
+method:'POST',
+body:new FormData(form)
 })
+
+.then(response=>{
+
+alert("✅ आपका फॉर्म सफलतापूर्वक सबमिट हो गया है");
+
+form.reset();
+
+/* Restore Button */
+submitBtn.disabled=false;
+btnText.style.display="inline";
+loader.style.display="none";
+isSubmitting=false;
+
+})
+
+.catch(error=>{
+
+alert("❌ Submission Failed");
+
+submitBtn.disabled=false;
+btnText.style.display="inline";
+loader.style.display="none";
+isSubmitting=false;
+
+console.error(error);
+});
+});
 </script>
 </body>
 </html>
