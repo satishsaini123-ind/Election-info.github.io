@@ -162,16 +162,33 @@ button:disabled{
 </div>
 
 
-<div><label>वर्तमान पदस्थापन स्थल-तहसील</label><input type="text" name="posting_tehsil"></div>
-<div><label>वर्तमान पदस्थापन स्थल-विधानसभा</label><input type="text" name="posting_constitution"></div>
+<div><label>वर्तमान पदस्थापन स्थल-तहसील</label>
+<select name="posting_tehsil">
+<option>Jaipur City</option>
+<option>Sanganer</option>
+</select>
+</div>
+<div><label>वर्तमान पदस्थापन स्थल-विधानसभा</label>
+<select name="posting_constitution">
+<option>Aadarsh Nagar</option>
+<option>Civil Lines</option>
+<option>Hawamahal</option>
+<option>Jhotwara</option>
+<option>Kishanpole</option>
+<option>Malviya Nagar</option>
+<option>Sanganer</option>
+<option>Vidhyadhar Nagar</option>
+</select>
+</div>
 
 <div>
 <label>सेवा प्रकार</label>
 <select name="service_type">
 <option value="">Select</option>
-<option>राज्य</option>
-<option>केन्द्र</option>
-<option>अर्धसरकारी</option>
+<option value="राज्य सरकार-SG">राज्य</option>
+<option value="केन्द्रीय सरकार-CG">केन्द्र</option>
+<option value="राज्य सरकार उपक्रम-SP">राज्य सरकार उपक्रम</option>
+<option value="केन्द्रीय सरकार उपक्रम-CP">केन्द्रीय सरकार उपक्रम</option>
 </select>
 </div>
 
@@ -179,8 +196,8 @@ button:disabled{
 <label>राजपत्रित / अराजपत्रित</label>
 <select name="gazetted">
 <option value="">Select</option>
-<option>राजपत्रित</option>
-<option>अराजपत्रित</option>
+<option value="Gazetted">राजपत्रित</option>
+<option value="Non Gazetted">अराजपत्रित</option>
 </select>
 </div>
 
@@ -193,7 +210,28 @@ button:disabled{
 <div class="form-grid">
 
 <div><label>वर्तमान निवास-विधानसभाक्षेत्र</label><input type="text" name="current_residence"></div>
-<div><label>स्थाई निवास-गृह विधानसभा क्षेत्र</label><input type="text" name="permanent_residence"></div>
+<div><label>स्थाई निवास-गृह विधानसभा क्षेत्र</label>
+<select name="permanent_residence">
+<option>OTHER</option>
+<option>ADARSH NAGAR</option>
+<option>AMER</option>
+<option>BAGROO</option>
+<option>BASSI</option>
+<option>CHAKSU</option>
+<option>CHOMU</option>
+<option>CIVIL LINES</option>
+<option>DUDU</option>
+<option>HAWAMAHAL</option>
+<option>JAMWARAMGRAH</option>
+<option>JHOTWARA</option>
+<option>KISHANPOLE</option>
+<option>MALVIYA NAGAR</option>
+<option>PHULERA</option>
+<option>SANGANER</option>
+<option>SHAHPURA</option>
+<option>VIDHYADHAR NAGAR</option>
+</select>
+</div>
 
 <div>
 <label>BLO</label>
@@ -219,7 +257,28 @@ button:disabled{
 
 <div><label>मतदाता सूची भाग/क्रम</label><input type="text" name="epic_part_no"></div>
 <div><label>EPIC नंबर</label><input type="text" name="epic_no" required></div>
-<div><label>विधानसभा क्षेत्र, जहां EPIC कार्ड बना</label><input type="text" name="constituency" required></div>
+<div><label>विधानसभा क्षेत्र, जहां EPIC कार्ड बना</label>
+<select name="constituency" required>
+<option>OTHER</option>
+<option>ADARSH NAGAR</option>
+<option>AMER</option>
+<option>BAGROO</option>
+<option>BASSI</option>
+<option>CHAKSU</option>
+<option>CHOMU</option>
+<option>CIVIL LINES</option>
+<option>DUDU</option>
+<option>HAWAMAHAL</option>
+<option>JAMWARAMGRAH</option>
+<option>JHOTWARA</option>
+<option>KISHANPOLE</option>
+<option>MALVIYA NAGAR</option>
+<option>PHULERA</option>
+<option>SANGANER</option>
+<option>SHAHPURA</option>
+<option>VIDHYADHAR NAGAR</option> 
+</select>
+</div>
 
 </div>
 </div>
@@ -300,8 +359,44 @@ button:disabled{
 </select>   
 
 </div>
-<div><label>कार्यालय (English)</label><input type="text" name="office_en"></div>
-<div><label>कार्यालय (Hindi)</label><input type="text" name="office_hi"></div>
+<div><label>कार्यालय (English)</label>
+<select name="office_en">
+<option>SMS MEDICAL COLLEGE</option>
+<option>SMS HOSPITAL</option>
+<option value="SIR PADAMPAT MOTHER AND CHILD HOSPITAL(JK LON HOSPITAL)">JK LON HOSPITAL</option>    
+<option>MAHILA CHIKITSALYA</option>
+<option>PDDU HOSPITAL GANGORI BAZAR</option>
+<option>INSTITUTE OF RESPIRETORY DISEASE</option>
+<option>GOVT. SATELLITE HOSPITAL BANIPARK</option>
+<option>SR GOYAL GOVT. HOSPITAL SETHI COLONY</option>
+<option>HARIBUX KANWATIA HOSPITAL, SHASTRI NAGAR</option>
+<option>REHABILITATION RESEARCH CENTRE</option>
+<option>PSYCHIATRIC CENTRE</option>
+<option>STATE CANCER INSTITUTE</option>
+<option>SUPER SPECIALITY HOSPITAL</option>
+</select>
+</div>
+
+<div><label>कार्यालय (Hindi)</label>
+<select name="office_hi">
+
+<option>सवाई मानसिंह चिकित्सा महाविद्यालय</option>
+<option>सवाई मानसिंह चिकित्सालय</option>
+<option value="सर पदमपत मदर एंड चाइल्ड हॉस्पिटल (जे के लोन हॉस्पिटल)">जे के लोन हॉस्पिटल</option>    
+<option>महिला चिकित्सालय</option>
+<option>पं दी उपा हॉस्पिटल गणगौरी बाजार</option>
+<option>श्वसन रोग संस्थान</option>
+<option>सरकारी सैटेलाइट अस्पताल बानीपार्क</option>
+<option>एसआर गोयल सरकारी अस्पताल, सेठी कॉलोनी</option>
+<option>हरिबक्स कांवटिया अस्पताल, शास्त्री नगर</option>
+<option>पुनर्वास अनुसंधान केंद्र</option>
+<option>मनोरोग केंद्र</option>
+<option>राज्य कैंसर संस्थान</option>
+<option>सुपर स्पेशलिटी अस्पताल</option>
+    
+</select></div>
+
+
 <div><label>DDO कोड</label><input type="text" name="ddo_code"></div>
 
 
